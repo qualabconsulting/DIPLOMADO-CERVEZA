@@ -102,6 +102,19 @@
         .module-card.final { grid-column: span 5; text-align: center; background: #0F0F0F; padding: 1.5rem; }
         .module-card.final .module-title { font-size: 0.9rem; color: var(--gold); }
 
+        /* Curriculum Map Image */
+        .curriculum-map-container { max-width: 900px; width: 100%; margin-top: 3.5rem; text-align: center; }
+        .curriculum-map-img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); border: 1px solid rgba(212, 175, 55, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .curriculum-map-img:hover { transform: scale(1.02); border-color: var(--gold); box-shadow: 0 25px 50px rgba(0,0,0,0.7); }
+
+        /* Benefits Section */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1100px; width: 100%; }
+        .benefit-card { background: var(--bg-card); padding: 2.5rem 2rem; text-align: center; border-top: 2px solid transparent; transition: all 0.3s ease; }
+        .benefit-card:hover { border-top: 2px solid var(--gold); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); background: var(--bg-card-hover); }
+        .benefit-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem; }
+        .benefit-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 0.75rem; color: var(--text-light); }
+        .benefit-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
         /* Reviews */
         .reviews-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; width: 100%; }
         .review-card { background: var(--bg-card); padding: 2rem; position: relative; border-left: 2px solid var(--gold); }
@@ -123,7 +136,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Pricing */
-        .pricing-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 900px; margin-bottom: 3rem; width: 100%; }
+        .pricing-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 900px; margin-bottom: 2rem; width: 100%; }
         .price-card { background: var(--bg-card); padding: 2.5rem; text-align: center; position: relative; min-width: 300px; max-width: 380px; flex: 1; border: 1px solid #222; }
         .price-card.featured { border: 1px solid var(--gold); box-shadow: 0 0 40px rgba(212, 175, 55, 0.1); }
         .ribbon { position: absolute; top: -1px; right: -1px; background: var(--gold); color: var(--bg-dark); padding: 0.4rem 1rem; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; }
@@ -132,11 +145,17 @@
         .price-amount sup { font-size: 1.5rem; vertical-align: super; color: var(--gold); }
         .price-old { text-decoration: line-through; color: #555; font-size: 1rem; margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif; }
         .price-desc { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem; min-height: 50px; line-height: 1.4; }
-        .payment-btn { display: block; width: 100%; padding: 1rem; font-weight: 600; text-decoration: none; text-align: center; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; border: 1px solid transparent; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; }
+        .payment-btn { display: block; width: 100%; padding: 1rem; font-weight: 600; text-decoration: none; text-align: center; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; border: 1px solid transparent; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; cursor: pointer; }
         .btn-paypal { background: var(--gold); color: var(--bg-dark); }
         .btn-paypal:hover { background: var(--gold-light); box-shadow: 0 0 20px var(--gold-glow); }
         .btn-outline { background: transparent; color: var(--text-light); border: 1px solid var(--text-muted); }
         .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* Accept Terms Container */
+        .accept-terms-wrapper { max-width: 800px; margin: 0 auto 2.5rem; text-align: center; background: rgba(212, 175, 55, 0.05); padding: 1.5rem; border: 1px dashed rgba(212, 175, 55, 0.3); }
+        .accept-terms-label { display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; font-size: 0.9rem; color: var(--text-light); }
+        .accept-terms-label input { accent-color: var(--gold); width: 20px; height: 20px; cursor: pointer; }
+        .accept-terms-label a { color: var(--gold); text-decoration: underline; }
 
         /* Bank Info */
         .bank-info { background: var(--bg-card); padding: 2.5rem; max-width: 700px; width: 100%; text-align: center; border-top: 2px solid var(--gold); }
@@ -182,6 +201,7 @@
     <div class="nav-dots">
         <a href="#hero" class="nav-dot active"></a>
         <a href="#temario" class="nav-dot"></a>
+        <a href="#beneficios" class="nav-dot"></a>
         <a href="#resenas" class="nav-dot"></a>
         <a href="#faq" class="nav-dot"></a>
         <a href="#inscripcion" class="nav-dot"></a>
@@ -192,7 +212,7 @@
         <div class="hero-content">
             <span class="hero-badge-top industrial-text reveal-element">Cuarta Generación</span>
             <h1 class="reveal-element">Diplomado en Ciencia y<br><span>Tecnología Cervecera</span></h1>
-            <p class="hero-subtitle reveal-element">Formación especializada para los profesionales de la cerveza del mañana.</p>
+            <p class="hero-subtitle reveal-element">Formación especializada para los profesionales de la cerveza del mañana. Impulsa tu pasión y transforma tu futuro.</p>
             
             <div class="hero-features reveal-element">
                 <span class="feature-item"><i class="fas fa-globe"></i> 100% Online</span>
@@ -203,12 +223,12 @@
             <a href="#inscripcion" class="cta-btn reveal-element">
                 Inscríbete Ahora <i class="fas fa-arrow-right"></i>
             </a>
-            <span class="limited-spots industrial-text reveal-element">Cupos Limitados</span>
+            <span class="limited-spots industrial-text reveal-element">Cupos Limitados | Becas para los primeros 10</span>
         </div>
         
         <div class="hero-image-wrapper reveal-element">
             <div class="hero-image-frame" id="heroImageFrame">
-                <img src="https://z-cdn-media.chatglm.cn/files/a922f1e6-b6d7-49ad-922e-70cb2f8a8d29.png?auth_key=1882144353-d7ab253a20f0447bbdcd69100c3fbecf-0-02d42e95fecba6b76c682910c6ab8d43" alt="Diplomado Cervecero Online">
+                <img src="https://z-cdn-media.chatglm.cn/files/96fd22a7-0dce-4a7f-9d3b-fd2131c79cb7.png?auth_key=1882162761-7c37379c47e640ee8f0de9516a24418f-0-52c6cf3caaa6df98c964fa22372ece7a" alt="Diplomado Cervecero Online - Promoción Cuarta Generación">
             </div>
         </div>
 
@@ -220,7 +240,7 @@
             </div>
             <div class="stat-item">
                 <div class="stat-number">24</div>
-                <div class="stat-label">Módulos</div>
+                <div class="stat-label">Clases</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">100%</div>
@@ -271,6 +291,43 @@
             <div class="module-card"><span class="module-number">24</span><p class="module-title">Control de Proceso</p></div>
             <div class="module-card"><span class="module-number"><i class="fas fa-trophy"></i></span><p class="module-title">Proyecto Final</p></div>
         </div>
+
+        <!-- Mapa Curricular Image -->
+        <div class="curriculum-map-container reveal-element">
+            <p class="section-subtitle" style="margin-bottom: 1rem;">Visualiza tu Camino</p>
+            <img src="https://z-cdn-media.chatglm.cn/files/42e3e213-f12e-4a89-9892-af520d4e771c.png?auth_key=1882162761-721cd6cd97a84ebdbd229a6fe4db3fe7-0-f087505728a522e4c85267381dcf2c4c" alt="Mapa Curricular Diplomado Cervecero" class="curriculum-map-img">
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios">
+        <div class="section-header reveal-element">
+            <span class="section-subtitle">Ventajas</span>
+            <h2 class="section-title industrial-text">¿Por qué elegirnos?</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card reveal-element">
+                <div class="benefit-icon"><i class="fas fa-flask"></i></div>
+                <h3 class="benefit-title">Enfoque Práctico</h3>
+                <p class="benefit-desc">No solo teoría. Aprenderás a formular recetas reales, corregir errores de fermentación y dominar la química del agua para Impactar el sabor.</p>
+            </div>
+            <div class="benefit-card reveal-element">
+                <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                <h3 class="benefit-title">Comunidad Premium</h3>
+                <p class="benefit-desc">Únete a una red activa de cerveceros artesanales, emprendedores y expertos. Resuelve tus dudas y haz networking con futuros líderes.</p>
+            </div>
+            <div class="benefit-card reveal-element">
+                <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+                <h3 class="benefit-title">Certificación Profesional</h3>
+                <p class="benefit-desc">Obtén un diploma que respalda tu conocimiento científico y tecnológico, ideal para impulsar tu marca o conseguir empleo en la industria.</p>
+            </div>
+            <div class="benefit-card reveal-element">
+                <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+                <h3 class="benefit-title">De Homebrewer a Pro</h3>
+                <p class="benefit-desc">Da el salto de la cocina a una planta industrial. Domina desde la normativa hasta la creación de estilos innovadores como Hard Seltzer y Honey Beer.</p>
+            </div>
+        </div>
     </section>
 
     <!-- RESEÑAS -->
@@ -302,7 +359,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ y TÉRMINOS -->
     <section id="faq">
         <div class="section-header reveal-element">
             <span class="section-subtitle">Dudas</span>
@@ -319,6 +376,10 @@
                 <div class="faq-answer">No. El temario está diseñado para llevarte de la mano desde los conceptos más básicos (historia y términos) hasta técnicas avanzadas (formulación y corrección de errores). Tanto principiantes como cerveceros intermedios se benefician enormemente.</div>
             </details>
             <details class="faq-item">
+                <summary class="faq-question">¿Qué oportunidades laborales tendré al graduarme? <i class="fas fa-plus"></i></summary>
+                <div class="faq-answer">Al concluir, estarás capacitado para abrir tu propia microcervecera, trabajar como maestro cervecero en cervecerías establecidas, o convertirirte en consultor de marcas. Además, el conocimiento de estilos especiales (como cerveza cannábica o hard seltzer) te abrirá puertas en mercados emergentes de alta demanda.</div>
+            </details>
+            <details class="faq-item">
                 <summary class="faq-question">¿Qué pasa si me atraso en las clases? <i class="fas fa-plus"></i></summary>
                 <div class="faq-answer">No te preocupes. El diplomado es 100% online y diseñado para que estudies a tu propio ritmo. Aunque las clases se entreguen semanalmente, tienes acceso permanente al material, así que puedes reproducirlas cuantas veces necesites, cuando quieras.</div>
             </details>
@@ -330,6 +391,19 @@
                 <summary class="faq-question">¿La beca del 30% es para todos? <i class="fas fa-plus"></i></summary>
                 <div class="faq-answer">La beca del 30% (que reduce el costo de $1,000 a $700 pesos mensuales) es un beneficio exclusivo para las primeras 10 personas que se inscriban en esta cuarta generación. Una vez que se cubran los 10 lugares, el precio regresa a su tarifa normal. ¡Te recomendamos asegurar tu lugar lo antes posible!</div>
             </details>
+            
+            <!-- TÉRMINOS DESPLEGABLES -->
+            <details class="faq-item" id="terminos">
+                <summary class="faq-question">Términos y Condiciones <i class="fas fa-plus"></i></summary>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 1rem;"><strong>1. Inscripción y Acceso:</strong> Al completar el proceso de pago, el alumno recibe acceso a la plataforma digital. El material se liberará semanalmente para pagos mensuales, o de forma inmediata para pagos de contado.</p>
+                    <p style="margin-bottom: 1rem;"><strong>2. Pagos y Suscripciones:</strong> El Plan Mensual es un cobro recurrente automático a través de PayPal durante 6 meses. El Pago de Contado otorga acceso completo inmediato. La falta de pago en el plan mensual resultará en la suspensión temporal del acceso hasta que se regularice.</p>
+                    <p style="margin-bottom: 1rem;"><strong>3. Política de Reembolso:</strong> Debido a la naturaleza digital del contenido y la entrega inmediata del material educativo, no se realizan reembolsos una vez que el alumno ha recibido sus credenciales de acceso a la plataforma.</p>
+                    <p style="margin-bottom: 1rem;"><strong>4. Propiedad Intelectual:</strong> Todo el material del curso (videos, textos, recetas, documentos descargables) es propiedad exclusiva del Diplomado. Está estrictamente prohibido descargar, copiar, redistribuir o comercializar dicho material sin autorización.</p>
+                    <p style="margin-bottom: 1rem;"><strong>5. Certificación:</strong> El diploma digital se otorgará únicamente a los alumnos que completen la totalidad de los 24 módulos y entreguen/aprueben el proyecto final. La emisión del diploma se realiza de forma digital.</p>
+                    <p><strong>6. Beca del 30%:</strong> La beca aplicable a los primeros 10 inscritos es un descuento sobre la tarifa mensual regular ($1,000 MXN). No aplica para pagos de contado anteriores, no es canjeable por efectivo y se pierde si se cancela la suscripción de PayPal.</p>
+                </div>
+            </details>
         </div>
     </section>
 
@@ -340,6 +414,14 @@
             <h2 class="section-title industrial-text">Opciones de Inversión</h2>
             <div class="section-divider"></div>
         </div>
+
+        <!-- Casilla de Aceptación -->
+        <div class="accept-terms-wrapper reveal-element">
+            <label class="accept-terms-label">
+                <input type="checkbox" id="acceptTerms">
+                He leído y acepto los <a href="#terminos" onclick="document.getElementById('terminos').open = true;">Términos y Condiciones</a>
+            </label>
+        </div>
         
         <div class="pricing-container">
             <div class="price-card featured reveal-element">
@@ -348,7 +430,7 @@
                 <p class="price-old">$1,000 MXN</p>
                 <p class="price-amount"><sup>$</sup>700<span style="font-size:1rem; color:var(--text-muted)"> MXN</span></p>
                 <p class="price-desc">Pago mensual por 6 meses. <br>Recibirás <strong>1 clase nueva cada semana</strong>. Aplica para los primeros 10 inscritos.</p>
-                <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7FL673089S7289145NGJCFWA" target="_blank" class="payment-btn btn-paypal">Suscribirme con PayPal</a>
+                <button class="payment-btn btn-paypal" onclick="checkTerms('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7FL673089S7289145NGJCFWA')">Suscribirme con PayPal</button>
             </div>
 
             <div class="price-card reveal-element">
@@ -356,7 +438,7 @@
                 <div style="height: 36px;"></div>
                 <p class="price-amount"><sup>$</sup>3,500<span style="font-size:1rem; color:var(--text-muted)"> MXN</span></p>
                 <p class="price-desc">Pago en una sola exhibición. <br>Acceso completo e inmediato a todo el contenido.</p>
-                <a href="https://wa.me/524921344124?text=Hola%20quiero%20pagar%20el%20diplomado%20en%20una%20sola%20exhibición%20($3500)%20por%20transferencia." target="_blank" class="payment-btn btn-outline">Notificar Pago al WhatsApp</a>
+                <button class="payment-btn btn-outline" onclick="checkTerms('https://wa.me/524921344124?text=Hola%20quiero%20pagar%20el%20diplomado%20en%20una%20sola%20exhibición%20($3500)%20por%20transferencia.')">Notificar Pago al WhatsApp</button>
             </div>
         </div>
 
@@ -381,6 +463,7 @@
         <p class="footer-text">Formación especializada para los profesionales de la cerveza del mañana.</p>
         <div class="footer-contact">
             <a href="https://wa.me/524921344124"><i class="fab fa-whatsapp"></i> 492 134 4124</a>
+            <a href="#terminos" onclick="document.getElementById('terminos').open = true;">Términos y Condiciones</a>
             <span>© 2024 Todos los derechos reservados</span>
         </div>
     </footer>
@@ -456,6 +539,19 @@
             heroSection.addEventListener('mouseleave', () => {
                 heroFrame.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) translateZ(0)';
             });
+        }
+
+        // 5. Validación de Términos y Condiciones antes de pagar
+        function checkTerms(url) {
+            const checkbox = document.getElementById('acceptTerms');
+            if (checkbox.checked) {
+                window.open(url, '_blank');
+            } else {
+                alert('Debes leer y aceptar los Términos y Condiciones para continuar con el pago.');
+                // Despliega el acordeón de términos para que el usuario los lea
+                document.getElementById('terminos').open = true;
+                document.getElementById('terminos').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
     </script>
 </body>
