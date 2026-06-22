@@ -135,6 +135,17 @@
         .faq-answer { padding: 1.5rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Bonus Section (Hidromiel) */
+        .bonus-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center; max-width: 1000px; width: 100%; background: var(--bg-card); padding: 3rem; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 0 40px rgba(212, 175, 55, 0.1); }
+        .bonus-image-container { position: relative; }
+        .bonus-image-container img { width: 100%; height: auto; display: block; border: 2px solid var(--gold); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+        .bonus-badge { display: inline-block; background: var(--gold); color: var(--bg-dark); padding: 0.5rem 1rem; font-size: 0.9rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; margin-bottom: 1.5rem; }
+        .bonus-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text-light); margin-bottom: 1rem; line-height: 1.1; }
+        .bonus-desc { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6; font-size: 0.95rem; }
+        .bonus-list { list-style: none; }
+        .bonus-list li { margin-bottom: 0.75rem; color: var(--text-light); display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+        .bonus-list i { color: var(--gold); }
+        
         /* Large Countdown Timer */
         .countdown-container { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0 3rem; }
         .countdown-block { background: var(--bg-card); border: 1px solid rgba(212, 175, 55, 0.3); padding: 2rem 2.5rem; min-width: 140px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; overflow: hidden; }
@@ -189,6 +200,7 @@
             .hero-content { display: flex; flex-direction: column; align-items: center; }
             .hero-subtitle { border-left: none; border-top: 2px solid var(--gold); padding-left: 0; padding-top: 1rem; max-width: 100%; }
             .hero-features { justify-content: center; }
+            .bonus-wrapper { grid-template-columns: 1fr; gap: 2rem; }
         }
         @media (max-width: 600px) {
             section { padding: 4rem 1.5rem; }
@@ -199,6 +211,7 @@
             .stats-bar { gap: 2rem; }
             .countdown-block { padding: 1.5rem; min-width: calc(50% - 1rem); }
             .count-number { font-size: 3.5rem; }
+            .bonus-wrapper { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -339,11 +352,36 @@
         </div>
     </section>
 
+    <!-- BONO DE HIDROMIEL -->
+    <section id="bono" style="min-height: auto;">
+        <div class="section-header reveal-element">
+            <span class="section-subtitle">Regalo Exclusivo</span>
+            <h2 class="section-title industrial-text">Bono Adicional Gratis</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="bonus-wrapper reveal-element">
+            <div class="bonus-image-container">
+                <img src="https://z-cdn-media.chatglm.cn/files/23211307-953a-47d7-b5e4-10361b29bff3.png?auth_key=1882165173-0720a26bb1264d8b82ce38f76ec97b59-0-77a5287bdd1e6ba91da20cd025fcf965" alt="Curso Gratis de Hidromiel">
+            </div>
+            <div class="bonus-content">
+                <span class="bonus-badge">BONO DE BIENVENIDA</span>
+                <h3 class="bonus-title">CURSO GRATIS DE HIDROMIEL</h3>
+                <p class="bonus-desc">Aprende a elaborar Hidromiel desde cero. Al inscribirte hoy al Diplomado en Ciencia y Tecnología Cervecera, te llevas este curso completo totalmente GRATIS como regalo de bienvenida para ampliar tu repertorio de bebidas fermentadas.</p>
+                <ul class="bonus-list">
+                    <li><i class="fas fa-check-circle"></i> Certificado de finalización</li>
+                    <li><i class="fas fa-check-circle"></i> Acceso a la comunidad premium</li>
+                    <li><i class="fas fa-check-circle"></i> Recetas y formulación paso a paso</li>
+                    <li><i class="fas fa-check-circle"></i> Técnicas de fermentación avanzadas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- RESEÑAS -->
     <section id="resenas">
         <div class="section-header reveal-element">
             <span class="section-subtitle">Testimonios</span>
-            <h2 class="section-title industrial-text">Experiencias de Alumni</h2>
+            <h2 class="section-title industrial-text">Experiencias de Alumnos</h2>
             <div class="section-divider"></div>
         </div>
         <div class="reviews-container">
@@ -398,19 +436,19 @@
             </details>
             <details class="faq-item">
                 <summary class="faq-question">¿La beca del 30% es para todos? <i class="fas fa-plus"></i></summary>
-                <div class="faq-answer">La beca del 30% (que reduce el costo de $1,000 a $700 pesos mensuales) es un beneficio exclusivo para las primeras 10 personas que se inscriban en esta cuarta generación. Una vez que se cubran los 10 lugares, el precio regresa a su tarifa normal. ¡Te recomendamos asegurar tu lugar lo antes posible!</div>
+                <div class="faq-answer">La beca del 30% (que reduce el costo mensual de $1,000 a $700 pesos) y el descuento extra por pago de contado (dejándolo en solo $3,500 pesos en lugar de $6,000) son un beneficio exclusivo para las primeras 10 personas que se inscriban en esta cuarta generación. Una vez que se cubran los 10 lugares, el precio regresa a su tarifa normal. ¡Te recomendamos asegurar tu lugar lo antes posible!</div>
             </details>
             
             <!-- TÉRMINOS DESPLEGABLES -->
             <details class="faq-item" id="terminos">
                 <summary class="faq-question">Términos y Condiciones <i class="fas fa-plus"></i></summary>
                 <div class="faq-answer">
-                    <p style="margin-bottom: 1rem;"><strong>1. Inscripción y Acceso:</strong> Al completar el proceso de pago, el alumno recibe acceso a la plataforma digital. El material se liberará semanalmente para pagos mensuales, o de forma inmediata para pagos de contado.</p>
+                    <p style="margin-bottom: 1rem;"><strong>1. Inscripción y Acceso:</strong> Al completar el proceso de pago, el alumno recibe acceso a la plataforma digital. El material se liberará semanalmente para pagos mensuales, o de forma inmediata para pagos de contado. Se incluye el acceso al curso gratuito de Hidromiel.</p>
                     <p style="margin-bottom: 1rem;"><strong>2. Pagos y Suscripciones:</strong> El Plan Mensual es un cobro recurrente automático a través de PayPal durante 6 meses. El Pago de Contado otorga acceso completo inmediato. La falta de pago en el plan mensual resultará en la suspensión temporal del acceso hasta que se regularice.</p>
                     <p style="margin-bottom: 1rem;"><strong>3. Política de Reembolso:</strong> Debido a la naturaleza digital del contenido y la entrega inmediata del material educativo, no se realizan reembolsos una vez que el alumno ha recibido sus credenciales de acceso a la plataforma.</p>
                     <p style="margin-bottom: 1rem;"><strong>4. Propiedad Intelectual:</strong> Todo el material del curso (videos, textos, recetas, documentos descargables) es propiedad exclusiva del Diplomado. Está estrictamente prohibido descargar, copiar, redistribuir o comercializar dicho material sin autorización.</p>
                     <p style="margin-bottom: 1rem;"><strong>5. Certificación:</strong> El diploma digital se otorgará únicamente a los alumnos que completen la totalidad de los 24 módulos y entreguen/aprueben el proyecto final. La emisión del diploma se realiza de forma digital.</p>
-                    <p><strong>6. Beca del 30%:</strong> La beca aplicable a los primeros 10 inscritos es un descuento sobre la tarifa mensual regular ($1,000 MXN). No aplica para pagos de contado anteriores, no es canjeable por efectivo y se pierde si se cancela la suscripción de PayPal.</p>
+                    <p><strong>6. Beca del 30% y Tarifas:</strong> La beca aplicable a los primeros 10 inscritos ofrece una tarifa de $700 MXN mensuales o un pago único de contado de $3,500 MXN (aplicando un descuento extra por pago inicial). Una vez cubiertos los 10 lugares, el costo regresa a su precio normal ($1,000 MXN mensuales / $6,000 MXN contado). No es canjeable por efectivo y se pierde si se cancela la suscripción de PayPal.</p>
                 </div>
             </details>
         </div>
@@ -460,17 +498,17 @@
             <div class="price-card featured reveal-element">
                 <div class="ribbon">Beca 30%</div>
                 <p class="price-header">Plan Mensual con Beca</p>
-                <p class="price-old">$1,000 MXN</p>
+                <p class="price-old">$1,000 MXN / mes</p>
                 <p class="price-amount"><sup>$</sup>700<span style="font-size:1rem; color:var(--text-muted)"> MXN</span></p>
-                <p class="price-desc">Pago mensual por 6 meses. <br>Recibirás <strong>1 clase nueva cada semana</strong>. Aplica para los primeros 10 inscritos.</p>
+                <p class="price-desc">Pago mensual por 6 meses. <br>Aplica para los primeros 10 inscritos. <br><span style="color: var(--gold); font-size: 0.75rem;">Después de los 10 lugares, regresa a $1,000 MXN/mes.</span></p>
                 <button class="payment-btn btn-paypal" onclick="checkTerms('https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7FL673089S7289145NGJCFWA')">Suscribirme con PayPal</button>
             </div>
 
             <div class="price-card reveal-element">
                 <p class="price-header">Pago de Contado</p>
-                <div style="height: 36px;"></div>
+                <p class="price-old">$6,000 MXN</p>
                 <p class="price-amount"><sup>$</sup>3,500<span style="font-size:1rem; color:var(--text-muted)"> MXN</span></p>
-                <p class="price-desc">Pago en una sola exhibición. <br>Acceso completo e inmediato a todo el contenido.</p>
+                <p class="price-desc">Pago en una sola exhibición. <br><strong>Obtienes mayor descuento.</strong> Ahorra $2,500. <br><span style="color: var(--gold); font-size: 0.75rem;">Después de los 10 lugares, regresa a $6,000 MXN.</span></p>
                 <button class="payment-btn btn-outline" onclick="checkTerms('https://wa.me/524921344124?text=Hola%20quiero%20pagar%20el%20diplomado%20en%20una%20sola%20exhibición%20($3500)%20por%20transferencia.')">Notificar Pago al WhatsApp</button>
             </div>
         </div>
