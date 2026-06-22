@@ -135,6 +135,13 @@
         .faq-answer { padding: 1.5rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Large Countdown Timer */
+        .countdown-container { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0 3rem; }
+        .countdown-block { background: var(--bg-card); border: 1px solid rgba(212, 175, 55, 0.3); padding: 2rem 2.5rem; min-width: 140px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative; overflow: hidden; }
+        .countdown-block::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--gold); }
+        .count-number { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 5rem; color: var(--gold); line-height: 1; text-shadow: 0 0 20px var(--gold-glow); }
+        .count-label { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 0.5rem; }
+
         /* Pricing */
         .pricing-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 900px; margin-bottom: 2rem; width: 100%; }
         .price-card { background: var(--bg-card); padding: 2.5rem; text-align: center; position: relative; min-width: 300px; max-width: 380px; flex: 1; border: 1px solid #222; }
@@ -190,6 +197,8 @@
             .hero-content h1 span { font-size: 3.5rem; }
             .nav-dots { display: none; }
             .stats-bar { gap: 2rem; }
+            .countdown-block { padding: 1.5rem; min-width: calc(50% - 1rem); }
+            .count-number { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -415,6 +424,30 @@
             <div class="section-divider"></div>
         </div>
 
+        <!-- Temporizador / Cuenta Regresiva -->
+        <div class="reveal-element" style="text-align: center; width: 100%; max-width: 900px; margin-bottom: 1rem;">
+            <p class="section-subtitle" style="margin-bottom: 0.5rem;">Cierran el 2 de Julio de 2026</p>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--text-light); margin-bottom: 1.5rem;">El tiempo se agota. Asegura tu lugar antes de que cierre la inscripción:</h3>
+            <div class="countdown-container" id="countdown">
+                <div class="countdown-block">
+                    <span class="count-number" id="days">00</span>
+                    <span class="count-label">Días</span>
+                </div>
+                <div class="countdown-block">
+                    <span class="count-number" id="hours">00</span>
+                    <span class="count-label">Horas</span>
+                </div>
+                <div class="countdown-block">
+                    <span class="count-number" id="minutes">00</span>
+                    <span class="count-label">Minutos</span>
+                </div>
+                <div class="countdown-block">
+                    <span class="count-number" id="seconds">00</span>
+                    <span class="count-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Casilla de Aceptación -->
         <div class="accept-terms-wrapper reveal-element">
             <label class="accept-terms-label">
@@ -553,6 +586,29 @@
                 document.getElementById('terminos').scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
+
+        // 6. Cuenta Regresiva (Temporizador)
+        const countDownDate = new Date("July 2, 2026 23:59:59").getTime();
+        
+        const timerInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("countdown").innerHTML = "<h3 class='industrial-text' style='color: var(--gold); font-size: 2rem;'>Inscripciones Cerradas</h3>";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
